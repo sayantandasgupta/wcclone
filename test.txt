@@ -1,0 +1,5 @@
+Hi my name is Sayantan Dasgupta
+This is my first Python command line tool
+In this tool I am trying to clone the wc command line tool
+Let's see how this works
+I am just passing time
