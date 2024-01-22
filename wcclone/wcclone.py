@@ -1,6 +1,6 @@
 import click
 
-from utils import countBytes, countLines, countWords
+from wcclone.utils import countBytes, countLines, countWords
 
 
 @click.command()
@@ -15,7 +15,7 @@ def main(bytes, lines, words, file):
             lineCount = countLines(file)
             wordCount = countWords(file)
             byteCount = countBytes(file)
-            click.echo(f"{lineCount} {wordCount} {byteCount} {file}")
+            click.echo(f"  {lineCount} {wordCount} {byteCount} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
@@ -23,7 +23,7 @@ def main(bytes, lines, words, file):
         try:
             lineCount = countLines(file)
             byteCount = countBytes(file)
-            click.echo(f"{lineCount} {byteCount} {file}")
+            click.echo(f"  {lineCount} {byteCount} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
@@ -31,7 +31,7 @@ def main(bytes, lines, words, file):
         try:
             lineCount = countLines(file)
             wordCount = countWords(file)
-            click.echo(f"{lineCount} {wordCount} {file}")
+            click.echo(f"  {lineCount} {wordCount} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
@@ -39,28 +39,28 @@ def main(bytes, lines, words, file):
         try:
             wordCount = countWords(file)
             byteCount = countBytes(file)
-            click.echo(f"{wordCount} {byteCount} {file}")
+            click.echo(f"  {wordCount} {byteCount} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
     elif lines:
         try:
             res = countLines(file)
-            click.echo(f"{res} {file}")
+            click.echo(f"  {res} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
     elif bytes:
         try:
             res = countBytes(file)
-            click.echo(f"{res} {file}")
+            click.echo(f"  {res} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
     elif words:
         try:
             res = countWords(file)
-            click.echo(f"{res} {file}")
+            click.echo(f"  {res} {file}")
         except FileNotFoundError:
             click.echo("File not found")
 
@@ -69,10 +69,6 @@ def main(bytes, lines, words, file):
             lineCount = countLines(file)
             wordCount = countWords(file)
             byteCount = countBytes(file)
-            click.echo(f"{lineCount} {wordCount} {byteCount} {file}")
+            click.echo(f"  {lineCount} {wordCount} {byteCount} {file}")
         except FileNotFoundError:
             click.echo("File not found")
-
-
-if __name__ == "__main__":
-    main()
