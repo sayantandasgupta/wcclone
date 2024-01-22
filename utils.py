@@ -10,15 +10,28 @@ def countBytes(file: str) -> int:
     except FileNotFoundError:
         raise FileNotFoundError
 
-def countLines(file : str) -> int:
+
+def countLines(file: str) -> int:
     try:
         with open(file) as f:
             lines = f.readlines()
             numLines = len(lines)
-            
+
             return numLines
     except FileNotFoundError:
         raise FileNotFoundError
-    
-def countWords(file : str) -> int:
-    pass
+
+
+def countWords(file: str) -> int:
+    try:
+        with open(file) as f:
+            lines = f.readlines()
+            numWords = 0
+
+            for line in lines:
+                words = line.strip().split()
+                numWords += len(words)
+
+        return numWords
+    except FileNotFoundError:
+        raise FileNotFoundError
