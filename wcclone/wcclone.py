@@ -13,67 +13,28 @@ def main(bytes, lines, words, file):
     file_name = file.name if file.name != '-' else ''
 
     data = file.readlines()
-    click.echo(file_name)
 
-    # if lines and bytes and words:
-    #     try:
-    #         lineCount = countLines(file)
-    #         wordCount = countWords(file)
-    #         byteCount = countBytes(file)
-    #         click.echo(f"  {lineCount} {wordCount} {byteCount} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    lineCount = countLines(fileData=data)
+    wordCount = countWords(fileData=data)
+    byteCount = countBytes(fileData=data)
 
-    # elif lines and bytes:
-    #     try:
-    #         lineCount = countLines(file)
-    #         byteCount = countBytes(file)
-    #         click.echo(f"  {lineCount} {byteCount} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    if lines and bytes:
+        click.echo(f"  {lineCount} {byteCount} {file_name}")
 
-    # elif lines and words:
-    #     try:
-    #         lineCount = countLines(file)
-    #         wordCount = countWords(file)
-    #         click.echo(f"  {lineCount} {wordCount} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    elif lines and words:
+        click.echo(f"  {lineCount} {wordCount} {file_name}")
 
-    # elif words and bytes:
-    #     try:
-    #         wordCount = countWords(file)
-    #         byteCount = countBytes(file)
-    #         click.echo(f"  {wordCount} {byteCount} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    elif words and bytes:
+        click.echo(f"  {wordCount} {byteCount} {file_name}")
 
-    # elif lines:
-    #     try:
-    #         res = countLines(file)
-    #         click.echo(f"  {res} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    elif lines:
+        click.echo(f"  {lineCount} {file_name}")
 
-    # elif bytes:
-    #     try:
-    #         res = countBytes(file)
-    #         click.echo(f"  {res} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    elif bytes:
+        click.echo(f"  {byteCount} {file_name}")
 
-    # elif words:
-    #     try:
-    #         res = countWords(file)
-    #         click.echo(f"  {res} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    elif words:
+        click.echo(f"  {wordCount} {file_name}")
 
-    # else:
-    #     try:
-    #         lineCount = countLines(file)
-    #         wordCount = countWords(file)
-    #         byteCount = countBytes(file)
-    #         click.echo(f"  {lineCount} {wordCount} {byteCount} {file}")
-    #     except FileNotFoundError:
-    #         click.echo("File not found")
+    else:
+        click.echo(f"  {lineCount} {wordCount} {byteCount} {file_name}")
