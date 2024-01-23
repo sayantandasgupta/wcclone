@@ -118,7 +118,7 @@ If you have followed all the steps, you can now test the tool.
 Use the following command
 
 ```bash
-> wc test.txt
+> wcclone test.txt
   5 37 181 test.txt
 ```
 
